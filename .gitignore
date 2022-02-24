@@ -7,6 +7,7 @@ __pycache__/
 .virtual_documents
 # C extensions
 *.so
+**/tuning
 
 # Distribution / packaging
 .Python
