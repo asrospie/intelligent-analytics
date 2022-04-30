@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[93]:
-
-
 from tensorflow import keras
 from sklearn.metrics import accuracy_score, classification_report
 import pandas as pd
@@ -14,39 +8,19 @@ import pickle
 import matplotlib.pyplot as plt
 from skopt.plots import plot_convergence
 
-
-# In[2]:
-
-
 train = pd.read_csv('./fashion-mnist_train.csv').to_numpy()
 test = pd.read_csv('./fashion-mnist_test.csv').to_numpy()
 
-
-# In[3]:
-
-
 N_CLASSES = 10
-
-
-# In[4]:
-
 
 x_train = train[:,1:] / 255.0
 y_train = train[:,0]
 x_test = test[:,1:] / 255.0
 y_test = test[:,0]
 
-
-# In[5]:
-
-
 # Preprocess data for cnn
 x_train_cnn = x_train.reshape(x_train.shape[0], 28, 28, 1)
 x_test_cnn = x_test.reshape(x_test.shape[0], 28, 28, 1)
-
-
-# In[58]:
-
 
 def build_cnn(n_units=[500], n_hidden_layers=1, learning_rate=1e-3, activation='relu', dropout=0.0, optimizer='adam', n_filters=32, kernel_size=3, pool_size=3):
     model = keras.models.Sequential()
@@ -87,10 +61,6 @@ def build_cnn(n_units=[500], n_hidden_layers=1, learning_rate=1e-3, activation='
     
     return model
 
-
-# In[59]:
-
-
 SPACE = [
     skopt.space.Integer(100, 700, name='n_units_one'),
     skopt.space.Integer(50, 500, name='n_units_two'),
@@ -103,28 +73,12 @@ SPACE = [
     skopt.space.Integer(1, 5, name='pool_size')
 ]
 
-
-# In[73]:
-
-
 N_CALLS = 10
-
-
-# In[74]:
-
 
 model_calls = [ i for i in range(N_CALLS) ]
 model_dict = {}
 
-
-# In[75]:
-
-
 EARLY_STOPPING = keras.callbacks.EarlyStopping(monitor='val_accuracy', patience=5)
-
-
-# In[116]:
-
 
 @skopt.utils.use_named_args(SPACE)
 def objective(**params):
@@ -183,36 +137,17 @@ def objective(**params):
     
     return -np.mean(scores)
 
-
-# In[77]:
-
-
 # Run optimization
 opt_results = skopt.gp_minimize(objective, SPACE, n_calls=N_CALLS, random_state=0)
 skopt.dump(opt_results, './tuning/cnn_opt_results.pkl')
 
-
-# In[78]:
-
-
 opt_loaded = skopt.load('./tuning/cnn_opt_results.pkl')
-
-
-# In[101]:
-
 
 with open('./tuning/cnn_model_dict.pickle', 'wb') as handle:
     pickle.dump(model_dict, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-
-# In[102]:
-
-
 with open('./tuning/cnn_model_dict.pickle', 'rb') as handle:
     model_dict = pickle.load(handle)
-
-
-# In[103]:
 
 
 # Find best values
@@ -224,28 +159,13 @@ for i in avg_scores:
         max_val = i[1]
         max_idx = i[0]
 
-
-# In[104]:
-
-
 bp = model_dict[max_idx]
 
-
-# In[105]:
-
-
 print(bp)
-
-
-# In[106]:
-
 
 ax = plot_convergence(opt_loaded)
 plt.savefig('./plots/cnn_one_layer_convergence.png')
 plt.clf()
-
-
-# In[111]:
 
 
 final_model = build_cnn(
@@ -263,17 +183,9 @@ final_model.fit(x_train_cnn, y_train, epochs=1)
 final_model.load_weights(bp['path'])
 final_model.save('./models/cnn_one_layer/')
 
-
-# In[113]:
-
-
 final_model_predictions = final_model.predict(x_test_cnn)
 class_predictions = [ np.argmax(x) for x in final_model_predictions ]
 print(classification_report(y_test, class_predictions))
-
-
-# In[115]:
-
 
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
@@ -281,10 +193,3 @@ cm = confusion_matrix(y_test, class_predictions)
 ax = sns.heatmap(cm.T, square=True, annot=True, fmt='d')
 ax.set(title='CNN w/ 1 Conv Layer & 1 Max Pool Layer', xlabel='Predicted', ylabel='True')
 plt.savefig('./plots/cnn_one_layer_cm.png')
-
-
-# In[ ]:
-
-
-
-
