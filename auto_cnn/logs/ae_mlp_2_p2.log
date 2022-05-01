@@ -1,0 +1,18 @@
+{'n_units': [177, 56], 'n_layers': 1, 'learning_rate': 0.0079950682207965, 'activation': 'tanh', 'optimizer': 'sgd', 'path': './test_models/ae_mlp_2_checkpoint_8.h5', 'avg_score': 0.8845}
+              precision    recall  f1-score   support
+
+           0       0.83      0.83      0.83      1000
+           1       0.99      0.96      0.98      1000
+           2       0.78      0.81      0.79      1000
+           3       0.88      0.89      0.88      1000
+           4       0.79      0.83      0.81      1000
+           5       0.96      0.94      0.95      1000
+           6       0.72      0.66      0.68      1000
+           7       0.93      0.95      0.94      1000
+           8       0.95      0.97      0.96      1000
+           9       0.95      0.95      0.95      1000
+
+    accuracy                           0.88     10000
+   macro avg       0.88      0.88      0.88     10000
+weighted avg       0.88      0.88      0.88     10000
+

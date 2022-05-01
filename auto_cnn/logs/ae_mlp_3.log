@@ -1,0 +1,428 @@
+###############################################################################
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ enc_1 (Dense)               (None, 392)               307720    
+                                                                 
+ enc_2 (Dense)               (None, 196)               77028     
+                                                                 
+ enc_3 (Dense)               (None, 98)                19306     
+                                                                 
+ hidden_layer_0 (Dense)      (None, 88)                8712      
+                                                                 
+ hidden_layer_1 (Dense)      (None, 64)                5696      
+                                                                 
+ output_layer (Dense)        (None, 10)                650       
+                                                                 
+=================================================================
+Total params: 419,112
+Trainable params: 15,058
+Non-trainable params: 404,054
+_________________________________________________________________
+None
+Training model 0.0...
+Finished Training... 4 models left.
+Training model 0.1...
+Finished Training... 3 models left.
+Training model 0.2...
+Finished Training... 2 models left.
+Training model 0.3...
+Finished Training... 1 models left.
+Training model 0.4...
+Finished Training... 0 models left.
+--------------------------------------------------
+Run #0
+n_units_one : 88
+n_units_two : 64
+learning_rate : 0.03481410351917474
+activation : selu
+optimizer : adam
+Avg. Val. Acc. :: 0.64405
+###############################################################################
+###############################################################################
+Model: "sequential_5"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ enc_1 (Dense)               (None, 392)               307720    
+                                                                 
+ enc_2 (Dense)               (None, 196)               77028     
+                                                                 
+ enc_3 (Dense)               (None, 98)                19306     
+                                                                 
+ hidden_layer_0 (Dense)      (None, 80)                7920      
+                                                                 
+ output_layer (Dense)        (None, 10)                810       
+                                                                 
+=================================================================
+Total params: 412,784
+Trainable params: 8,730
+Non-trainable params: 404,054
+_________________________________________________________________
+None
+Training model 1.0...
+Finished Training... 4 models left.
+Training model 1.1...
+Finished Training... 3 models left.
+Training model 1.2...
+Finished Training... 2 models left.
+Training model 1.3...
+Finished Training... 1 models left.
+Training model 1.4...
+Finished Training... 0 models left.
+--------------------------------------------------
+Run #1
+n_units_one : 80
+n_units_two : 15
+learning_rate : 0.002710162626224753
+activation : tanh
+optimizer : adam
+Avg. Val. Acc. :: 0.8393333333333333
+###############################################################################
+###############################################################################
+Model: "sequential_10"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ enc_1 (Dense)               (None, 392)               307720    
+                                                                 
+ enc_2 (Dense)               (None, 196)               77028     
+                                                                 
+ enc_3 (Dense)               (None, 98)                19306     
+                                                                 
+ hidden_layer_0 (Dense)      (None, 83)                8217      
+                                                                 
+ output_layer (Dense)        (None, 10)                840       
+                                                                 
+=================================================================
+Total params: 413,111
+Trainable params: 9,057
+Non-trainable params: 404,054
+_________________________________________________________________
+None
+Training model 2.0...
+Finished Training... 4 models left.
+Training model 2.1...
+Finished Training... 3 models left.
+Training model 2.2...
+Finished Training... 2 models left.
+Training model 2.3...
+Finished Training... 1 models left.
+Training model 2.4...
+Finished Training... 0 models left.
+--------------------------------------------------
+Run #2
+n_units_one : 83
+n_units_two : 63
+learning_rate : 0.008800667561385514
+activation : selu
+optimizer : sgd
+Avg. Val. Acc. :: 0.8774333333333333
+###############################################################################
+###############################################################################
+Model: "sequential_15"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ enc_1 (Dense)               (None, 392)               307720    
+                                                                 
+ enc_2 (Dense)               (None, 196)               77028     
+                                                                 
+ enc_3 (Dense)               (None, 98)                19306     
+                                                                 
+ hidden_layer_0 (Dense)      (None, 77)                7623      
+                                                                 
+ output_layer (Dense)        (None, 10)                780       
+                                                                 
+=================================================================
+Total params: 412,457
+Trainable params: 8,403
+Non-trainable params: 404,054
+_________________________________________________________________
+None
+Training model 3.0...
+Finished Training... 4 models left.
+Training model 3.1...
+Finished Training... 3 models left.
+Training model 3.2...
+Finished Training... 2 models left.
+Training model 3.3...
+Finished Training... 1 models left.
+Training model 3.4...
+Finished Training... 0 models left.
+--------------------------------------------------
+Run #3
+n_units_one : 77
+n_units_two : 65
+learning_rate : 0.02527739155984556
+activation : selu
+optimizer : sgd
+Avg. Val. Acc. :: 0.8642833333333332
+###############################################################################
+###############################################################################
+Model: "sequential_20"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ enc_1 (Dense)               (None, 392)               307720    
+                                                                 
+ enc_2 (Dense)               (None, 196)               77028     
+                                                                 
+ enc_3 (Dense)               (None, 98)                19306     
+                                                                 
+ hidden_layer_0 (Dense)      (None, 91)                9009      
+                                                                 
+ hidden_layer_1 (Dense)      (None, 48)                4416      
+                                                                 
+ output_layer (Dense)        (None, 10)                490       
+                                                                 
+=================================================================
+Total params: 417,969
+Trainable params: 13,915
+Non-trainable params: 404,054
+_________________________________________________________________
+None
+Training model 4.0...
+Finished Training... 4 models left.
+Training model 4.1...
+Finished Training... 3 models left.
+Training model 4.2...
+Finished Training... 2 models left.
+Training model 4.3...
+Finished Training... 1 models left.
+Training model 4.4...
+Finished Training... 0 models left.
+--------------------------------------------------
+Run #4
+n_units_one : 91
+n_units_two : 48
+learning_rate : 0.018873257833005665
+activation : relu
+optimizer : adam
+Avg. Val. Acc. :: 0.8037333333333333
+###############################################################################
+###############################################################################
+Model: "sequential_25"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ enc_1 (Dense)               (None, 392)               307720    
+                                                                 
+ enc_2 (Dense)               (None, 196)               77028     
+                                                                 
+ enc_3 (Dense)               (None, 98)                19306     
+                                                                 
+ hidden_layer_0 (Dense)      (None, 78)                7722      
+                                                                 
+ output_layer (Dense)        (None, 10)                790       
+                                                                 
+=================================================================
+Total params: 412,566
+Trainable params: 8,512
+Non-trainable params: 404,054
+_________________________________________________________________
+None
+Training model 5.0...
+Finished Training... 4 models left.
+Training model 5.1...
+Finished Training... 3 models left.
+Training model 5.2...
+Finished Training... 2 models left.
+Training model 5.3...
+Finished Training... 1 models left.
+Training model 5.4...
+Finished Training... 0 models left.
+--------------------------------------------------
+Run #5
+n_units_one : 78
+n_units_two : 57
+learning_rate : 0.0002544805063401325
+activation : selu
+optimizer : adam
+Avg. Val. Acc. :: 0.8707333333333332
+###############################################################################
+###############################################################################
+Model: "sequential_30"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ enc_1 (Dense)               (None, 392)               307720    
+                                                                 
+ enc_2 (Dense)               (None, 196)               77028     
+                                                                 
+ enc_3 (Dense)               (None, 98)                19306     
+                                                                 
+ hidden_layer_0 (Dense)      (None, 79)                7821      
+                                                                 
+ hidden_layer_1 (Dense)      (None, 36)                2880      
+                                                                 
+ output_layer (Dense)        (None, 10)                370       
+                                                                 
+=================================================================
+Total params: 415,125
+Trainable params: 11,071
+Non-trainable params: 404,054
+_________________________________________________________________
+None
+Training model 6.0...
+Finished Training... 4 models left.
+Training model 6.1...
+Finished Training... 3 models left.
+Training model 6.2...
+Finished Training... 2 models left.
+Training model 6.3...
+Finished Training... 1 models left.
+Training model 6.4...
+Finished Training... 0 models left.
+--------------------------------------------------
+Run #6
+n_units_one : 79
+n_units_two : 36
+learning_rate : 0.002237947889232047
+activation : selu
+optimizer : sgd
+Avg. Val. Acc. :: 0.8692833333333333
+###############################################################################
+###############################################################################
+Model: "sequential_35"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ enc_1 (Dense)               (None, 392)               307720    
+                                                                 
+ enc_2 (Dense)               (None, 196)               77028     
+                                                                 
+ enc_3 (Dense)               (None, 98)                19306     
+                                                                 
+ hidden_layer_0 (Dense)      (None, 75)                7425      
+                                                                 
+ hidden_layer_1 (Dense)      (None, 71)                5396      
+                                                                 
+ output_layer (Dense)        (None, 10)                720       
+                                                                 
+=================================================================
+Total params: 417,595
+Trainable params: 13,541
+Non-trainable params: 404,054
+_________________________________________________________________
+None
+Training model 7.0...
+Finished Training... 4 models left.
+Training model 7.1...
+Finished Training... 3 models left.
+Training model 7.2...
+Finished Training... 2 models left.
+Training model 7.3...
+Finished Training... 1 models left.
+Training model 7.4...
+Finished Training... 0 models left.
+--------------------------------------------------
+Run #7
+n_units_one : 75
+n_units_two : 71
+learning_rate : 0.0003256332587468535
+activation : selu
+optimizer : sgd
+Avg. Val. Acc. :: 0.8436
+###############################################################################
+###############################################################################
+Model: "sequential_40"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ enc_1 (Dense)               (None, 392)               307720    
+                                                                 
+ enc_2 (Dense)               (None, 196)               77028     
+                                                                 
+ enc_3 (Dense)               (None, 98)                19306     
+                                                                 
+ hidden_layer_0 (Dense)      (None, 88)                8712      
+                                                                 
+ output_layer (Dense)        (None, 10)                890       
+                                                                 
+=================================================================
+Total params: 413,656
+Trainable params: 9,602
+Non-trainable params: 404,054
+_________________________________________________________________
+None
+Training model 8.0...
+Finished Training... 4 models left.
+Training model 8.1...
+Finished Training... 3 models left.
+Training model 8.2...
+Finished Training... 2 models left.
+Training model 8.3...
+Finished Training... 1 models left.
+Training model 8.4...
+Finished Training... 0 models left.
+--------------------------------------------------
+Run #8
+n_units_one : 88
+n_units_two : 32
+learning_rate : 0.0079950682207965
+activation : tanh
+optimizer : sgd
+Avg. Val. Acc. :: 0.8740333333333334
+###############################################################################
+###############################################################################
+Model: "sequential_45"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ enc_1 (Dense)               (None, 392)               307720    
+                                                                 
+ enc_2 (Dense)               (None, 196)               77028     
+                                                                 
+ enc_3 (Dense)               (None, 98)                19306     
+                                                                 
+ hidden_layer_0 (Dense)      (None, 89)                8811      
+                                                                 
+ hidden_layer_1 (Dense)      (None, 73)                6570      
+                                                                 
+ output_layer (Dense)        (None, 10)                740       
+                                                                 
+=================================================================
+Total params: 420,175
+Trainable params: 16,121
+Non-trainable params: 404,054
+_________________________________________________________________
+None
+Training model 9.0...
+Finished Training... 4 models left.
+Training model 9.1...
+Finished Training... 3 models left.
+Training model 9.2...
+Finished Training... 2 models left.
+Training model 9.3...
+Finished Training... 1 models left.
+Training model 9.4...
+Finished Training... 0 models left.
+--------------------------------------------------
+Run #9
+n_units_one : 89
+n_units_two : 73
+learning_rate : 0.0017502728844860837
+activation : selu
+optimizer : sgd
+Avg. Val. Acc. :: 0.8690333333333333
+###############################################################################
+{'n_units': [83, 63], 'n_layers': 1, 'learning_rate': 0.008800667561385514, 'activation': 'selu', 'optimizer': 'sgd', 'path': './test_models/ae_mlp_3_checkpoint_2.h5', 'avg_score': 0.8776666666666667}
+              precision    recall  f1-score   support
+
+           0       0.82      0.81      0.82      1000
+           1       0.98      0.97      0.97      1000
+           2       0.81      0.77      0.79      1000
+           3       0.88      0.87      0.87      1000
+           4       0.78      0.81      0.80      1000
+           5       0.98      0.93      0.96      1000
+           6       0.69      0.67      0.68      1000
+           7       0.91      0.97      0.94      1000
+           8       0.93      0.98      0.95      1000
+           9       0.96      0.95      0.96      1000
+
+    accuracy                           0.87     10000
+   macro avg       0.87      0.87      0.87     10000
+weighted avg       0.87      0.87      0.87     10000
+

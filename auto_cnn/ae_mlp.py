@@ -88,7 +88,7 @@ def objective(**params):
     
     cv = KFold(5)
     
-    path = f'./test_models/ae_mlp_checkpoint_{model_num}.h5'
+    path = f'./test_models/ae_mlp_{AE_LAYERS}_checkpoint_{model_num}.h5'
     checkpoint = keras.callbacks.ModelCheckpoint(
         monitor='val_loss',
         filepath=path,
@@ -152,9 +152,9 @@ def objective(**params):
     return -np.mean(scores)
 
 opt_results = skopt.gp_minimize(objective, SPACE, n_calls=N_CALLS, random_state=0)
-skopt.dump(opt_results, './tuning/ae_mlp_opt_results.pkl')
+skopt.dump(opt_results, f'./tuning/ae_mlp_{AE_LAYERS}_opt_results.pkl')
 
-with open('./tuning/ae_mlp_model_dict.pickle', 'wb') as handle:
+with open(f'./tuning/ae_mlp_{AE_LAYERS}_model_dict.pickle', 'wb') as handle:
     pickle.dump(model_dict, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 # Find best values
@@ -172,16 +172,12 @@ print(bp)
 
 # Plot convergence graph
 ax = plot_convergence(opt_results)
-plt.savefig('./plots/ae_mlp_convergence.png')
+plt.savefig(f'./plots/ae_mlp_{AE_LAYERS}_convergence.png')
 plt.clf()
-
-n_units = [bp['n_units_one']]
-if bp['n_layers'] == 2:
-    n_units.append(bp['n_units_two'])
 
 # Build final model from best results
 final_model = build_model(
-    n_units=n_units,
+    n_units=bp['n_units'],
     n_layers=bp['n_layers'],
     activation=bp['activation'],
     optimizer=bp['optimizer'],
@@ -190,7 +186,7 @@ final_model = build_model(
 )
 final_model.build()
 final_model.load_weights(bp['path'])
-final_model.save('./models/ae_mlp/')
+final_model.save(f'./models/ae_mlp_{AE_LAYERS}/')
 
 predictions = final_model.predict(x_test)
 class_predictions = [ np.argmax(x) for x in predictions ]
@@ -201,4 +197,4 @@ import seaborn as sns
 cm = confusion_matrix(y_test, class_predictions)
 ax = sns.heatmap(cm.T, square=True, annot=True, fmt='d')
 ax.set(title='Autoencoder MLP', xlabel='Predicted', ylabel='True')
-plt.savefig('./plots/ae_mlp_cm.png')
+plt.savefig(f'./plots/ae_mlp_{AE_LAYERS}_cm.png')
