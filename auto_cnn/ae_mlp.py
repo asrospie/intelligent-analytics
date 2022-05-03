@@ -107,7 +107,7 @@ def objective(**params):
             n_units = [params['n_units_one'], params['n_units_two']] 
         else:
             n_units = [params['n_units_one']]
-        
+
         ts_model = build_model(
             n_units=n_units,
             n_layers=params['n_layers'],
